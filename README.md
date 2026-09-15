@@ -4,7 +4,7 @@ CUDA kernels written, tested and profiled. Each pair isolates a single GPU optim
 with Nsight Compute (`ncu`).
 
 **Environment**
-- Google Colab, Tesla T4 GPU (40 SMs, Compute Capability 7.5)
+- Google Colab, T4 GPU (40 SMs, Compute Capability 7.5)
 - Compile: `nvcc -o <exe> <file>.cu`
 - Profile: `ncu ./<exe>`
 
