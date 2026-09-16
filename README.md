@@ -19,7 +19,7 @@ with Nsight Compute (`ncu`).
 | Registers/thread | 52 | 39 | fewer, due to tile reuse replacing recomputation |
 | Achieved Occupancy | 98.72% | 98.68% | unchanged — the gain isn't from occupancy |
 
-** 2. Parallel Reduction — Naive vs. Optimized addressing **
+**2. Parallel Reduction — Naive vs. Optimized addressing**
 
 | Metric | Naive | Optimized | Change |
 |---|---|---|---|
@@ -29,7 +29,7 @@ with Nsight Compute (`ncu`).
 
 The naive kernel uses interleaved addressing (`if (tid % (2*stride) == 0)`), which scatters active threads non-contiguously within a warp in early iterations, causing warp divergence. The optimized kernel uses sequential addressing (`if (tid < stride)`, stride halving from `blockDim.x/2`), keeping active threads contiguous and warps either fully active or fully idle — eliminating that divergence.
 
-** 3. Warp Divergence — isolated comparison **
+**3. Warp Divergence — isolated comparison**
 
 | Metric | Divergent (thread-level branch) | Non-divergent (block-level branch) | Change |
 |---|---|---|---|
