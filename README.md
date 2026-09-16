@@ -9,6 +9,7 @@ with Nsight Compute (`ncu`).
 - Profile: `ncu ./<exe>`
 
 **Profiling results**
+
 **1. Matrix Multiplication — Naive vs. Tiled (shared memory)**
 
 | Metric | Naive | Tiled | Change |
